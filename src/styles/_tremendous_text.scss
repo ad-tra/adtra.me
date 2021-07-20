@@ -1,0 +1,48 @@
+.tremendous_text{
+    font-family: "Oregon Regular", Helvetica, sans-serif;
+    height: 100vh;
+    position: relative;
+    &_text{
+        position: absolute;
+        color: #443a3a;
+        font-size: 7em;
+        font-weight: normal;
+        line-height: 1.15em;
+        /*same margin as the a href inside nav controls*/
+        margin: 0.45em 0.3em;
+    }
+    &_controls{
+        position: absolute;
+        bottom: 1em; 
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        .languages, .internal_links{
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            font-family: "Oregon Medium Regular", Helvetica, sans-serif;
+            font-weight: normal;
+            a{
+                color: #443a3a;
+                font-size: 20px;
+                text-transform: uppercase;
+                display: block;
+                padding: 1em 2em;
+                text-decoration: none;
+            }
+            a:not(:first-of-type)::after{
+                content: '';
+                height: 21px;
+                width: 2px;
+                display: inline-flex;
+                /* color: red; */
+                background: #cacaca;
+                position: absolute;
+                right: 0;
+            }
+        }
+    
+    }
+
+}
