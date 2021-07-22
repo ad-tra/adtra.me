@@ -1,0 +1,23 @@
+.blog_post{
+    font-size: 23px;
+    margin: 5em 26em;
+    color: $gray;
+    h1,h2,h3,h4,h5{
+        font-family: "Tex Bold";
+        margin-bottom: 0.5em;
+
+    }
+    p{
+        font-family: "Oregon Regular", Helvetica, sans-serif;
+        margin-bottom: 1.5em;
+        /* word-spacing: 4px; */
+        /* text-align: justify; */
+        letter-spacing: 1px;
+        line-height: 37px;
+    }
+    code{
+        font-size: 17px;
+        background: #f1f1f1;
+        padding: 6px 0px;
+    }
+}

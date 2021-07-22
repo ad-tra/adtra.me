@@ -4,8 +4,29 @@
     box-sizing: border-box;
 }
 
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar {
+    background: transparent;
+}
+::-webkit-scrollbar-track {
+    background: #EDECE9;
+}
+::-webkit-scrollbar-thumb {
+    background:#D3D1CB;
+}
+::-webkit-scrollbar-thumb:hover {
+    background:#AEACA6;
+}
+
+
+
 @import "./fonts";
 @import "./colors.module.scss";
 
 @import "./layout";
-@import "./blog"
+@import "./blog";
+@import "./blog_post"
