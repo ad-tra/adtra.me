@@ -1,12 +1,13 @@
 import * as React from "react"
 
-import TremendousText from "../components/TremendousText"
+import Layout from "../components/Layout"
 // markup
 export default function NotFoundPage() {
   return (
-    <TremendousText
-      headerText = "501 Under Construction. I'm working on it, already have my pencil over my ear. See you soon." 
-    ></TremendousText>
+    <Layout
+      headerText = "501 Page Under Construction. I'm working on it, already have a pencil over my ear. See you soon." 
+      error
+    ></Layout>
   )
 }
 

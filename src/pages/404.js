@@ -1,12 +1,13 @@
 import * as React from "react"
 
-import TremendousText from "../components/TremendousText"
+import Layout from "../components/Layout"
 // markup
 export default function NotFoundPage() {
   return (
-    <TremendousText
+    <Layout
       headerText = "404 Not Found. I looked under the table and over the shelve, didn't find it." 
-    ></TremendousText>
+      error
+    ></Layout>
   )
 }
 

@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link }from 'gatsby'
 
-export default function TremendousText({headerText}) {
+export default function TremendousText({headerText,error ,children}) {
     return (
-    <div className="tremendous_text">
-        <h1 className="tremendous_text_text">{headerText}</h1>
-        <nav className="tremendous_text_controls">
+    <div className={`${error? "error" : ''} layout`}>
+        {headerText ? <h1 className="layout_header">{headerText}</h1>: ""}
+        {children}
+        <nav className="layout_controls">
           <ul className="languages">
             <li><Link to="/">en</Link></li>
             <li><Link to="/501">ar</Link></li>
@@ -14,7 +15,7 @@ export default function TremendousText({headerText}) {
           <ul className="internal_links">
             <li><Link to="/">home</Link></li>
             <li><Link to="/501">work</Link></li>
-            <li><Link to="/501">blog</Link></li>
+            <li><Link to="/blog">blog</Link></li>
           </ul>
         </nav>
     </div> 

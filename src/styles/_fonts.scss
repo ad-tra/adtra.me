@@ -19,6 +19,18 @@
     src: local('Oregon LDO Light Regular'), url('../fonts/Oregon LDO Light.woff') format('woff');
 }
 @font-face {
+    font-family: 'Tex Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('tex-gyre-adventor.regular'), url('../fonts/tex-gyre-adventor.regular.otf') ;
+}
+@font-face {
+    font-family: 'Tex Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('tex-gyre-adventor.bold'), url('../fonts/tex-gyre-adventor.bold.otf');
+}
+@font-face {
     font-family: 'Harir Display';
     font-style: normal;
     font-weight: normal;

@@ -1,0 +1,59 @@
+.long_content{
+    $longContentLeftPadding: 28vw;
+    padding-left:$longContentLeftPadding;
+    section{
+        padding-top:7em;
+        .title{
+            font-family: "Tex Bold", Helvetica, sans-serif;
+            margin-bottom: 2em;
+            font-size: 3.2em;
+            position: relative;
+            color:$gray;
+            line-height: 100px;
+            &::before{
+                content:'';
+                display: block;
+                background: $gray--light;
+                height: 2px;
+                width: 100%;
+            }
+            &::after{
+                $Diameter: 7px;
+                content: '';
+                display: block;
+                position:absolute;
+                background:$gray--light;
+                height: $Diameter;
+                width: $Diameter;
+                border-radius: 50%;
+                top: calc( #{$Diameter} / -2);
+                /*circle is not centered relative to the line. just add 1px to avoid the line bleeding out the circle intersection*/
+                left:-1px;
+            }
+        }
+        .blog_posts_list{
+            font-family: "Oregon Regular", Helvetica, sans-serif;
+            list-style: none;
+            &_item{
+                position: relative;
+                margin-bottom: 1.5em;
+                a{
+                    text-decoration: none;
+                    color:$gray;
+                    font-size: 2.5em;
+                }
+                &::before{
+                    $width:46px;
+                    $height: 35px;
+                    content:'';
+                    height: $height;
+                    width: $width;
+                    position: absolute;
+                    bottom: calc(50% - #{$height} /2);
+                    left:calc( ( #{$width} + 20px ) * -1);
+                    background: repeating-linear-gradient(0deg, transparent 0 3px , #cacaca 3px 4px);
+                }
+            }
+        }
+    }
+}
