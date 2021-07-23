@@ -3,10 +3,16 @@ import { Link, graphql } from 'gatsby'
 import { nanoid } from 'nanoid'
 
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 export default function Blog({data}) {
     return (
         <Layout>
+            <SEO 
+                title = "Blog - Adam Trabelsi"
+                description = "a list of blog posts written by Adam Trabelsi" 
+            />
+             
             <div className="long_content">
                 <section >
                     <h1 className="title">Blog</h1>
