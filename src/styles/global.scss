@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+$breakpointMobile: 500px;
+$breakpointLaptop: 1300px;
+
+@import "./fonts";
+@import "./colors.module.scss";
+
+@import "./layout";
+@import "./blog";
+@import "./blog_post";
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -22,12 +31,8 @@
     background:#AEACA6;
 }
 
-$breakpointMobile: 500px;
-$breakpointLaptop: 1300px;
+*::selection{
+    background: $blue--faint;
+    color: $blue--light
+}
 
-@import "./fonts";
-@import "./colors.module.scss";
-
-@import "./layout";
-@import "./blog";
-@import "./blog_post"

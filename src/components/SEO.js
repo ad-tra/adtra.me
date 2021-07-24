@@ -2,17 +2,18 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-export default function SEO({ description, lang, meta, image: metaImage, title }) {
+export default function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
+            siteUrl
             description
             author
             keywords
-            siteUrl
+            
           }
         }
       }
@@ -20,11 +21,8 @@ export default function SEO({ description, lang, meta, image: metaImage, title }
     )
     
     const metaDescription = description || site.siteMetadata.description
-    const image = metaImage && metaImage.src ? 
-    `${site.siteMetadata.siteUrl}${metaImage.src}`
-    : 
-    null
-  
+    const image = `${site.siteMetadata.siteUrl}/favicon.ico`
+    const metaImage = {width: 255, height: 255}
   
     return (
     <Helmet
