@@ -9,7 +9,7 @@ export default function about() {
 				<div className="long_content">
 					<section>
 						<h1 className="title">About</h1>
-						<p>hello there</p>
+						<p>hello there, you've reached a secret spot. Illuminati hangs here.  </p>
 					</section>
 				</div>
 			</Layout>

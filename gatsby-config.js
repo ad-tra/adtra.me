@@ -63,6 +63,17 @@ module.exports = {
               },
             },
         },
-    
+        {
+          resolve: `gatsby-plugin-manifest`,
+          options: {
+            name: 'Adam Trabelsi',
+            short_name: 'AdTra',
+            start_url: '/',
+            background_color: '#d7d7ff',
+            theme_color: '#d7d7ff',
+            display: 'standalone',
+            icon: 'static/favicon.ico',
+          },
+        }
     ]
 }
