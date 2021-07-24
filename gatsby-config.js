@@ -21,7 +21,8 @@ module.exports = {
                     options: {
                         maxWidth: 680,
                     }
-                }
+                },
+                `gatsby-remark-autolink-headers`
               ]
             }
         },
