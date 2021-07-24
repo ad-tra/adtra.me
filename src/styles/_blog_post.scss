@@ -4,8 +4,15 @@
     max-width: 680px;
     width: 92%;
     color: $gray;
+    @media (max-width: $breakpointMobile){
+        font-size: 22px;
+        h1{ 
+            font-size: 1.7em;
+        }
+    }
     /*supposed to *look* the same as the padding-top for .long_content > section*/
     margin:6em auto;
+
     h1,h2,h3,h4,h5{
         font-family: "Tex Bold";
         margin-bottom: 0.5em;
@@ -19,19 +26,22 @@
         font-family: "Oregon Regular", Helvetica, sans-serif;
         margin: 1em 0;
         letter-spacing: 1px;
-        line-height: 39px;
-        font-size: 21px;
+        line-height: 1.9em;
+        font-size: 0.91em;
     
+    }
+    a{
+        color: $blue;
     }
     pre > code{
         margin: 1em 0;
         display: block;
-        line-height: 29px;
+        line-height: 1.8em;
         max-height: 380px;
         overflow: auto;
     }
     code{
-        font-size: 17px;
+        font-size: 0.7em;
         background: #f1f1f1;
         padding: 6px 0px;
     }

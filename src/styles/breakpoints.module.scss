@@ -1,0 +1,6 @@
+$breakpointMobile: 500px;
+$breakpointLaptop: 1300px;
+:export {
+    breakpointMobile:$breakpointMobile;
+    breakpointLaptop:$breakpointLaptop;
+}

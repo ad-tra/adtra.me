@@ -1,10 +1,21 @@
 .layout{
     font-family: "Oregon Regular", Helvetica, sans-serif;
     position: relative;
+    @media (max-width: $breakpointLaptop){
+        font-size: 12px;
+    }
     &_header{
         position: absolute;
         color: $gray;
         font-size: 7em;
+        @media (max-width: $breakpointLaptop){
+            font-size: 5.3em;
+        }
+        @media (max-width: $breakpointMobile){
+            font-size: 3em;
+            padding-top:4vh;
+            line-height: 1.3em;
+        }
         font-weight: normal;
         line-height: 1.15em;
         /*same margin as the a href inside nav controls*/
@@ -15,16 +26,20 @@
         bottom: 0.5em; 
         width: 100vw;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        @media (max-width: $breakpointMobile){
+            justify-content: flex-start;
+        }
         font-family: "Tex Regular", Helvetica, sans-serif;
         z-index: 1;
+
         .languages, .internal_links{
             display: flex;
             justify-content: space-around;
             list-style: none;
             font-weight: normal;
             li{
-                font-size: 18px;
+                font-size: 1.3em;
                 text-transform: uppercase;
                 display: block;
                 padding: 1em 1.5em;
@@ -47,7 +62,7 @@
             }
         }
         .languages{
-
+            display: none;
             li:not(li:last-of-type)::before{
                 transform: rotate(45deg);
             }

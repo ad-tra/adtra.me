@@ -1,5 +1,4 @@
 import React from "react"
-import "../styles/global.scss"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"

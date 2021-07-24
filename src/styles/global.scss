@@ -22,7 +22,8 @@
     background:#AEACA6;
 }
 
-
+$breakpointMobile: 500px;
+$breakpointLaptop: 1300px;
 
 @import "./fonts";
 @import "./colors.module.scss";

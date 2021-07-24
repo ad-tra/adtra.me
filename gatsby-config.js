@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://www.adtra.me`,
+        siteUrl: `http://adtra.me`,
         title: `Adam Trabelsi`,
         description: `developer portfolio of Adam Trabelsi`,
         author: `Adam Trabelsi`,

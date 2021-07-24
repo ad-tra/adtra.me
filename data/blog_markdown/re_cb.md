@@ -8,10 +8,10 @@ description: "reverse engineering 2021 Digital AP Tests to learn what personal i
 As I finished my last AP exam, I can dedicate myself to tinkering. I am going to uncover the technical inner-workings of the 2021 digital AP Exams App. 
 > Some background info if you are lucky to evade the world of Standardized testing. The CollegeBoard is a company responsible for administrating international exams such as the SAT and AP exams which assist your admission into American universities and earn you college credit, respectively. 
 
-My focus is the AP exams. Usually, they are given in large, vast rooms with strict security, but not this year. In 2021 students take it on their small screens: laptops, desktops, and Chromebooks. The test, usually delivered on paper, is now administered online through an Electron app. 
+My focus is the AP exams. Usually, they are given in large, vast rooms with strict security, but not this year. In 2021 students can take it on their small screens: laptops, desktops, and Chromebooks. The test, usually delivered on paper, is now administered online through an Electron app. 
 
 ### Electron 
-Electron is a popular open-source framework that allows you to build cross-platform desktop apps. It powers VScode, Discord, and most importantly the AP Digital Exam app. The most crucial aspect of Electron is that it is chromium based which grants me access to its powerful **DevTools**. If I can access DevTools, I can inspect the source DOM of the app. I can listen to its requests with the backend. I can gain insight into the app. 
+Electron is a popular open-source framework that allows you to build cross-platform desktop apps. It powers VScode, Discord, and most importantly the AP Digital Exam app. The crucial aspect of Electron is that it is chromium based which grants me access to its powerful **DevTools**. If I can access DevTools, I can inspect the source DOM of the app. I can listen to its requests with the backend. I can gain insight. 
 
 How are the test questions retrieved from CollegeBoard servers? Are they encrypted or plain JSON? How much personal data does the app send? What tech stack does the CollegeBoard use?
 
@@ -64,6 +64,7 @@ Based on script tags, here is a list of client-side dependencies that the app us
  draft-js.js
  sentry.js
  moment.js
+ mathjax.js
  aws-sdk.js
  axios.js
  react-spinners.js
@@ -100,7 +101,7 @@ Based on script tags, here is a list of client-side dependencies that the app us
  ua-parser-js.js
  ```
 
-## What Private Information Does Collegeboard Collect. 
+## What Private Information Does Collegeboard Collect?
  
 CB uses, primarily, [sentry.io](sentry.io) to track users on test day. The reported data that the CB saves includes:
 
@@ -134,8 +135,8 @@ CollegeBoard records metadata on your device that ranges from your cpu manufactu
     - size   
 - Process: (tracks all your open processes)
 
-## how are the test questions retrieved from CollegeBoard servers? 
-I was intrigued by this question because the Collegeboard instructed all students to download the test three days before taking it. Does that mean the test in my position for three days? If so, I can open it and read the questions before test day. That is a disaster for test security. 
+## how are test questions retrieved from CollegeBoard servers? 
+I was intrigued by this question because the Collegeboard instructed all students to download the test three days before taking it. Does that mean the test in my position for three days? If so, I can open it and read the questions before test day. That is a security disaster. 
 When I thought more about it, I theorized the test is probably downloaded in an encrypted format that only gets decrypted when the exam starts. This theory was true. 
 
 Here is the data sent three days before taking one of my AP exams: 
