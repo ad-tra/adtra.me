@@ -8,6 +8,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
               frontmatter {
                 slug
                 title
+                status
               }
             }
           }
@@ -22,14 +23,17 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
     blogPosts.forEach((edge)=>{
         const blogPost = edge.node;
-
-        createPage({
+        
+        if(blogPost.frontmatter.status !== "private"){
+          createPage({
             path: `/blog/${blogPost.frontmatter.slug}/`,
             component: require.resolve('./src/templates/BlogPost.js'),
             context : {
                 id: blogPost.id
             }
         })
+        }
+        
     })
     
 

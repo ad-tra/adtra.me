@@ -1,11 +1,13 @@
 import React from "react";
 
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 export default function about() {
 	return (
 		<div>
 			<Layout>
+				<SEO  title ="About - Adam Trabelsi"/>
 				<div className="long_content">
 					<section>
 						<h1 className="title">About</h1>

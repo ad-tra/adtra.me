@@ -18,11 +18,18 @@ export default function Blog({data}) {
                     <h1 className="title">Blog</h1>
                     <ul className="blog_posts_list">{
                         
-                        data.allMarkdownRemark.edges.map(edge=>(
-                            <li key = {nanoid()} className= "blog_posts_list_item">
-                                <Link to={`./${edge.node.frontmatter.slug}`}>{edge.node.frontmatter.title}</Link>
-                            </li>
-                        ))
+                        data.allMarkdownRemark.edges.map(edge=>{ 
+                            const frontmatter = edge.node.frontmatter;
+                            
+                            if(frontmatter.status == "public"){
+                                return (
+                                <li key = {nanoid()} className= "blog_posts_list_item">
+                                    <Link to={`./${edge.node.frontmatter.slug}`}>{edge.node.frontmatter.title}</Link>
+                                </li>
+                                )
+                            } 
+                            
+                        })
                     
                     }
                     </ul>
@@ -39,6 +46,7 @@ export const query = graphql`
                 frontmatter {
                 slug
                 title
+                status
                 }
             }
             }

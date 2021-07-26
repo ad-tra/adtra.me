@@ -26,11 +26,11 @@ export default function TremendousText({headerText,error ,children}) {
         {headerText ? <h1 className="layout_header">{headerText}</h1>: ""}
         {children}
         <nav className="layout_controls">
-          <ul className="languages">
+          {/*<ul className="languages">
             <li><Link to="/">en</Link></li>
             <li><Link to="/501">ar</Link></li>
             <li><Link to="/501">fr</Link></li>
-          </ul>
+          </ul>*/}
           <ul className="internal_links">
             <li><Link to="/">home</Link></li>
             <li><Link to="/501">work</Link></li>
