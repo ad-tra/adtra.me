@@ -3,7 +3,7 @@ slug: "reverse-engineering-a-collegeBoard-app-ft-electron"
 date: "2021-07-21"	
 title: "Reverse Engineering a CollegeBoard App ft. Electron"	
 description: "reverse engineering 2021 Digital AP Tests to learn what personal information does the collegeboard track and what tech stack does the collegeboard use"
-status: "draft"	
+status: "public"	
 ---	
 # Reverse Engineering a CollegeBoard App ft. Electron 	
 As I finished my last AP exam, I can dedicate myself to tinkering. I am going to uncover the technical inner-workings of the 2021 digital AP Exams App. 	
