@@ -57,8 +57,9 @@
                     margin-bottom:2.5em;   
                 }
                 a{
-                    text-decoration: none;
-                    color:$gray;
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    color: rgb(68, 58, 58);
                     font-size: 2.5em;
                     @media (max-width: $breakpointMobile){
                         font-size:2em;
@@ -73,7 +74,7 @@
                     position: absolute;
                     bottom: calc(50% - #{$height} /2);
                     left:calc( ( #{$width} + 20px ) * -1);
-                    background: repeating-linear-gradient(0deg, #cacaca 6px,transparent 7px 7.5px);
+                    background: repeating-linear-gradient(0deg, #{$gray--light} 6px,transparent 7px 7.5px);
                     @media (max-width: $breakpointMobile){
                         $width: 3em;
                         width: $width;

@@ -21,14 +21,14 @@ export default function Blog({data}) {
                         data.allMarkdownRemark.edges.map(edge=>{ 
                             const frontmatter = edge.node.frontmatter;
                             
-                            if(frontmatter.status == "public"){
+                            if(frontmatter.status === "public"){
                                 return (
                                 <li key = {nanoid()} className= "blog_posts_list_item">
                                     <Link to={`./${edge.node.frontmatter.slug}`}>{edge.node.frontmatter.title}</Link>
                                 </li>
                                 )
                             } 
-                            
+                            return;
                         })
                     
                     }
