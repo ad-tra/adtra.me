@@ -24,16 +24,18 @@ export default function TremendousText({headerText,error ,children}) {
     
 
   const draw = (ctx, frameCount, canvas) => {
-    let x = 100, y = 100,  r = 90, startAngle = 0, endAngle = Math.PI * 2
-      //ctx.filter = "blur(20px)"
+    let x = 100, y = 100,  r = 140, startAngle = 0, endAngle = Math.PI * 2
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+ctx.filter = "blur(1px)"
       ctx.globalAlpha = 0.9
-      ctx.globalCompositeOperation = "luminosity";
+      ctx.globalCompositeOperation = "multiply";
 
 
-    for(let i = 0; i < canvas.height - y; i += 300){    
-      for(let j = 0; j < canvas.width - x; j += 300 ){
+    for(let i = 0; i < canvas.height - y; i += 150){    
+      for(let j = 0; j < canvas.width - x; j += 200 ){
         let gradient = ctx.createRadialGradient(x+j,y+i, 1, x+j,y+i, r );
-        gradient.addColorStop(0, 'rgba(0, 50, 200, 0.9)');
+        gradient.addColorStop(0, `rgba(150, 150, 150, ${Math.random()})`);
         gradient.addColorStop(1, 'white');
         ctx.fillStyle = gradient;
         
