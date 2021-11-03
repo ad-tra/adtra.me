@@ -23,12 +23,29 @@ export default function TremendousText({headerText,error ,children}) {
     },[])
     
 
-  const draw = (ctx, frameCount) => {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-    ctx.filter = 'blur(40px)'
-    ctx.beginPath()
-    ctx.arc(50, 100, 20*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI)
-    ctx.fill()
+  const draw = (ctx, frameCount, canvas) => {
+    let x = 100, y = 100,  r = 90, startAngle = 0, endAngle = Math.PI * 2
+      //ctx.filter = "blur(20px)"
+      ctx.globalAlpha = 0.9
+      ctx.globalCompositeOperation = "luminosity";
+
+
+    for(let i = 0; i < canvas.height - y; i += 300){    
+      for(let j = 0; j < canvas.width - x; j += 300 ){
+        let gradient = ctx.createRadialGradient(x+j,y+i, 1, x+j,y+i, r );
+        gradient.addColorStop(0, 'rgba(0, 50, 200, 0.9)');
+        gradient.addColorStop(1, 'white');
+        ctx.fillStyle = gradient;
+        
+        ctx.beginPath();
+        ctx.arc(x+j, y+i, r, startAngle, endAngle)
+        ctx.fill();
+      
+      }
+
+    }
+
+    
   }
   return (
     <div className={`${error? "error" : ''} layout`}>

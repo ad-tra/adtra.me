@@ -13,17 +13,17 @@ export default function Canvas (props) {
     const context = canvas.getContext('2d')
     let frameCount = 0
     let animationFrameId
+    draw(context, frameCount, canvas)
+    // const render = () => {
+    //   frameCount++
+    //   draw(context, frameCount, canvas)
+    //   animationFrameId = window.requestAnimationFrame(render)
+    // }
+    // render()
     
-    const render = () => {
-      frameCount++
-      draw(context, frameCount)
-      animationFrameId = window.requestAnimationFrame(render)
-    }
-    render()
-    
-    return () => {
-      window.cancelAnimationFrame(animationFrameId)
-    }
+    // return () => {
+    //   window.cancelAnimationFrame(animationFrameId)
+    // }
   }, [draw])
   
   return <canvas ref={canvasRef} {...rest}/>
