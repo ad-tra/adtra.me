@@ -23,12 +23,14 @@
     }
     &_controls{
         position: fixed;
-        bottom: 0.5em; 
+        bottom: 0; 
         width: 100vw;
         display: flex;
         justify-content: flex-end;
+
         @media (max-width: $breakpointMobile){
             justify-content: flex-start;
+            backdrop-filter: blur(3px);
         }
         font-family: "Tex Regular", Helvetica, sans-serif;
         z-index: 1;
@@ -48,7 +50,11 @@
                     color:inherit;
                     text-decoration: none;
                     color: $gray;
+                    &[aria-current="page"]{
+                        text-decoration: underline 1px $gray;
+                    }
                 }
+
             }
             li:not(li:last-of-type)::before{
                 $height: 21px;
@@ -84,7 +90,10 @@
             .languages, .internal_links{
                 li{
                     a{
-                        color:$blue--light
+                        color:$blue--light;
+                        &[aria-current="page"]{
+                            text-decoration: underline 1px $blue--light;
+                        }
                     }
                     &:before{
                         background: $blue--faint !important;
