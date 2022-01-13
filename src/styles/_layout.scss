@@ -20,6 +20,9 @@
         line-height: 1.15em;
         /*same margin as the a href inside nav controls*/
         margin: 0.45em 0.3em;
+        span{
+            position: relative;
+        }
     }
     &_controls{
         position: fixed;

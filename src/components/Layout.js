@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react'
 import { Link }from 'gatsby'
+import { motion } from 'framer-motion'
+
 import "../styles/global.scss"
 import * as Scss from '../styles/breakpoints.module.scss'
 
@@ -20,10 +22,28 @@ export default function TremendousText({headerText,error ,children}) {
       }    
     })
     
-  
+  const variants = {
+    visible: {
+      opacity: 1,
+      top: 0 
+    },
+    hidden: i => ({
+      opacity: 0,
+      top: `${0.25* i/6}em`,
+      transition: {
+      delay: Math.pow(0.7, i),
+      duration: 1
+     }
+    })
+  }
   return (
     <div className={`${error? "error" : ''} layout`}>
-        {headerText ? <h1 className="layout_header">{headerText}</h1>: ""}
+        {headerText ? 
+          <h1 className="layout_header" >
+            {headerText.split(" ").map((word,i) => <motion.span variants = {variants} initial = "hidden" animate= "visible" custom = {i}> {word}</motion.span>)}
+          </h1> 
+        : 
+        ""}
         {children}
         <nav className="layout_controls">
           {/*<ul className="languages">
