@@ -52,7 +52,7 @@
             }
             &_item{
                 position: relative;
-                margin-bottom: 1.5em;
+                margin-bottom: 2.5em;
                 @media (max-width: $breakpointMobile){
                     margin-bottom:2.5em;   
                 }
@@ -73,7 +73,7 @@
                     position: absolute;
                     bottom: calc(50% - #{$height} /2);
                     left:calc( ( #{$width} + 20px ) * -1);
-                    background: repeating-linear-gradient(0deg, #cacaca 6px,transparent 7px 7.5px);
+                    background: repeating-linear-gradient(0deg, #{$gray--light} 6px,transparent 7px 7.5px);
                     @media (max-width: $breakpointMobile){
                         $width: 3em;
                         width: $width;

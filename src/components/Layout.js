@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import { Link }from 'gatsby'
 import { motion } from 'framer-motion'
+import { StaticImage } from "gatsby-plugin-image"
+
 
 import "../styles/global.scss"
 import * as Scss from '../styles/breakpoints.module.scss'
@@ -29,14 +31,16 @@ export default function TremendousText({headerText,error ,children}) {
     },
     hidden: i => ({
       opacity: 0,
-      top: `${0.25* i/6}em`,
+      top: `${0.25* i/3}em`,
       transition: {
-      delay: Math.pow(0.7, i),
-      duration: 1
+      delay: Math.pow(1.7, i),
+      duration: 8
      }
     })
   }
+
   return (
+    <>
     <div className={`${error? "error" : ''} layout`}>
         {headerText ? 
           <h1 className="layout_header" >
@@ -53,10 +57,12 @@ export default function TremendousText({headerText,error ,children}) {
           </ul>*/}
           <ul className="internal_links">
             <li><Link to="/">home</Link></li>
-            <li><Link to="/501">work</Link></li>
+            <li><Link to="/work ">work</Link></li>
             <li><Link to="/blog">blog</Link></li>
           </ul>
         </nav>
     </div> 
-    )
+    </>
+
+  )
 }
