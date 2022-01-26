@@ -59,7 +59,7 @@ export default function Layout({headerText,error ,extraStyles, children}) {
             </ul>*/}
             <ul className="internal_links">
               <li><Link to="/">home</Link></li>
-              <li><Link to="/work ">work</Link></li>
+              <li><Link to="/work">work</Link></li>
               <li><Link to="/blog">blog</Link></li>
             </ul>
           </nav>

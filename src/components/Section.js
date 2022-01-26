@@ -40,7 +40,7 @@ export default function Section({title, list}) {
 const variants = {
     initial: i => ({
         y: 50 / (i === 0 ? 1 : i) ,
-        scaleY: 1 * Math.pow(0.5, i) 
+        scaleY: 1* Math.pow(0.85,i ) 
     }),
     animate: i => ({
         y: 0,
