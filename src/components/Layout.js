@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
 import { Link }from 'gatsby'
 import { motion } from 'framer-motion'
-import { StaticImage } from "gatsby-plugin-image"
 
 
 import "../styles/global.scss"
 import * as Scss from '../styles/breakpoints.module.scss'
 
-export default function TremendousText({headerText,error ,children}) {
+
+export default function Layout({headerText,error ,extraStyles, children}) {
     //changes the word "development" in header to "dev" on mobile screens
     useEffect(() => {
 
@@ -31,8 +31,9 @@ export default function TremendousText({headerText,error ,children}) {
     },
     hidden: i => ({
       opacity: 0,
-      top: `${0.25* i/3}em`,
+      top: 40 + 10 * (i=== 0? 1: i),
       transition: {
+      ease: "easeIn",
       delay: Math.pow(1.7, i),
       duration: 8
      }
@@ -40,29 +41,29 @@ export default function TremendousText({headerText,error ,children}) {
   }
 
   return (
-    <>
-    <div className={`${error? "error" : ''} layout`}>
-        {headerText ? 
-          <h1 className="layout_header" >
-            {headerText.split(" ").map((word,i) => <motion.span variants = {variants} initial = "hidden" animate= "visible" custom = {i}> {word}</motion.span>)}
-          </h1> 
-        : 
-        ""}
-        {children}
-        <nav className="layout_controls">
-          {/*<ul className="languages">
-            <li><Link to="/">en</Link></li>
-            <li><Link to="/501">ar</Link></li>
-            <li><Link to="/501">fr</Link></li>
-          </ul>*/}
-          <ul className="internal_links">
-            <li><Link to="/">home</Link></li>
-            <li><Link to="/work ">work</Link></li>
-            <li><Link to="/blog">blog</Link></li>
-          </ul>
-        </nav>
-    </div> 
-    </>
+      <div className={`${error? "error" : ''} layout`} style={extraStyles}>
+          {headerText ? 
+            <h1 className="layout_header" >
+              {headerText.split(" ").map((word,i) => <motion.span variants = {variants} initial = "hidden" animate= "visible" custom = {i}> {word}</motion.span>)}
+            </h1> 
+          : 
+          ""}
+
+          {children}
+
+          <nav className="layout_controls">
+            {/*<ul className="languages">
+              <li><Link to="/">en</Link></li>
+              <li><Link to="/501">ar</Link></li>
+              <li><Link to="/501">fr</Link></li>
+            </ul>*/}
+            <ul className="internal_links">
+              <li><Link to="/">home</Link></li>
+              <li><Link to="/work ">work</Link></li>
+              <li><Link to="/blog">blog</Link></li>
+            </ul>
+          </nav>
+      </div> 
 
   )
 }

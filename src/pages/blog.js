@@ -1,39 +1,26 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { nanoid } from 'nanoid'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
+import Section from "../components/Section"
 
 export default function Blog({data}) {
+    
+    const blogPosts = [] 
+    data.allMarkdownRemark.edges.forEach(edge=>{ 
+        const blogPost = edge.node.frontmatter;
+        if(blogPost.status === "public") blogPosts.push(blogPost);
+    })
+
+
+    
     return (
         <Layout>
-            <SEO 
-                title = "Blog - Adam Trabelsi"
-                description = "a list of blog posts written by Adam Trabelsi" 
-            />
-             
+            <SEO  title = "Blog - Adam Trabelsi" description = "a list of blog posts written by Adam Trabelsi" />
+            
             <div className="long_content">
-                <section >
-                    <h1 className="title">Blog</h1>
-                    <ul className="blog_posts_list">{
-                        
-                        data.allMarkdownRemark.edges.map(edge=>{ 
-                            const frontmatter = edge.node.frontmatter;
-                            
-                            if(frontmatter.status == "public"){
-                                return (
-                                <li key = {nanoid()} className= "blog_posts_list_item">
-                                    <Link to={`./${edge.node.frontmatter.slug}`}>{edge.node.frontmatter.title}</Link>
-                                </li>
-                                )
-                            } 
-                            
-                        })
-                    
-                    }
-                    </ul>
-                </section>
+                <Section title = "blog" list = {blogPosts}/>
             </div>
         </Layout>        
     )

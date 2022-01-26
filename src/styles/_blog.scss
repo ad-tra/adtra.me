@@ -6,41 +6,59 @@
         padding-left:$mobileScreenMargin;
     }
     section{
-        padding-top:7em;
+        $paddingSectionTop: 7em;
+        padding-top:$paddingSectionTop;
+        position: relative;
         @media (max-width: $breakpointMobile){
             padding-top:$mobileScreenMargin;
             
+        };
+        &::before{
+            @keyframes slideIn {
+                from {width: 30%;opacity: 0;}
+                to {width: 100%; opacity: 1;}
+            }
+            content:'';
+            display: block;
+            background: $gray--light;
+            height: 2px;
+            animation-name: slideIn;
+            animation-timing-function: ease-in;
+            animation-duration: 0.5s;
+
+            animation-fill-mode: both
+        }
+        &::after{
+            $Diameter: 7px;
+            content: '';
+            display: block;
+            position:absolute;
+            background:$gray--light;
+            height: $Diameter;
+            width: $Diameter;
+            border-radius: 50%;
+            top: calc( #{$paddingSectionTop}  + #{$Diameter} / -2);
+            /*circle is not centered relative to the line. just add 1px to avoid the line bleeding out the circle intersection*/
+            left:-1px;
+            @media (max-width: $breakpointMobile){
+                top: calc( #{$mobileScreenMargin}  + #{$Diameter} / -2);
+
+            }
         }
         .title{
             font-family: "Tex Bold", Helvetica, sans-serif;
+            margin-top: 0.5em;
             margin-bottom: 2em;
-            @media (max-width: $breakpointMobile){
-                margin-bottom: calc( #{$mobileScreenMargin} * 2);   
-                line-height: 70px;
-            }
+            text-transform: capitalize;
             font-size: 3.2em;
             position: relative;
             color:$gray;
-            line-height: 100px;
-            &::before{
-                content:'';
-                display: block;
-                background: $gray--light;
-                height: 2px;
-                width: 100%;
+            overflow: hidden;
+            @media (max-width: $breakpointMobile){
+                margin-bottom: calc( #{$mobileScreenMargin} * 2);   
             }
-            &::after{
-                $Diameter: 7px;
-                content: '';
+            span{
                 display: block;
-                position:absolute;
-                background:$gray--light;
-                height: $Diameter;
-                width: $Diameter;
-                border-radius: 50%;
-                top: calc( #{$Diameter} / -2);
-                /*circle is not centered relative to the line. just add 1px to avoid the line bleeding out the circle intersection*/
-                left:-1px;
             }
         }
         .blog_posts_list{
@@ -48,11 +66,11 @@
             list-style: none;
             @media (max-width: $breakpointMobile){
                 padding-right:$mobileScreenMargin;
-                
             }
             &_item{
                 position: relative;
                 margin-bottom: 2.5em;
+                transition: opacity 0.3s ease;
                 @media (max-width: $breakpointMobile){
                     margin-bottom:2.5em;   
                 }
@@ -60,6 +78,7 @@
                     text-decoration: underline 1px $gray;
                     color:$gray;
                     font-size: 2.5em;
+                    display: block;
                     @media (max-width: $breakpointMobile){
                         font-size:2em;
                     }
