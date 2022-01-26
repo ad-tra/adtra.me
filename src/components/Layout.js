@@ -24,27 +24,11 @@ export default function Layout({headerText,error ,extraStyles, children}) {
       }    
     })
     
-  const variants = {
-    visible: {
-      opacity: 1,
-      top: 0 
-    },
-    hidden: i => ({
-      opacity: 0,
-      top: 40 + 10 * (i=== 0? 1: i),
-      transition: {
-      ease: "easeIn",
-      delay: Math.pow(1.7, i),
-      duration: 8
-     }
-    })
-  }
-
   return (
       <div className={`${error? "error" : ''} layout`} style={extraStyles}>
           {headerText ? 
             <h1 className="layout_header" >
-              {headerText.split(" ").map((word,i) => <motion.span variants = {variants} initial = "hidden" animate= "visible" custom = {i}> {word}</motion.span>)}
+              {headerText.split(" ").map((word,i) => <motion.span variants = {variants} initial = "initial" animate= "animate" exit = "exit" custom = {i}> {word}</motion.span>)}
             </h1> 
           : 
           ""}
@@ -66,4 +50,27 @@ export default function Layout({headerText,error ,extraStyles, children}) {
       </div> 
 
   )
+}
+
+
+const variants = {
+  animate: {
+    opacity: 1,
+    top: 0 ,
+    transition:{
+      ease:[0.18, 0.89, 0.32, 1.4],
+    }
+  },
+  initial: i => ({
+    opacity: 0,
+    top: 40 + Math.pow(1.45,i),
+    transition: {
+      delay: Math.pow(1.7, i),
+      duration: 8
+   }
+  }),
+  exit: i => ({
+    opacity: 0,
+    top:   0.25* Math.pow(1.4,i),
+  })
 }

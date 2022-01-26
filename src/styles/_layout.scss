@@ -2,6 +2,7 @@
     font-family: "Oregon Light Regular", Helvetica, sans-serif;
     position: relative;
     background-image: url('../../data/images/main-background.png');
+    background-color: #d4d4d4; /*display this color while the image loads*/
     width: 100vw;
     min-height: 100vh;
     background-size: cover;
