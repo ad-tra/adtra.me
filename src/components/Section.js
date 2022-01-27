@@ -12,7 +12,7 @@ export default function Section({title, list}) {
     return (
     <section>
         <h1 className="title">
-            <motion.span initial={{y: '-100%'}} animate = {{y:0 }} exit={{y: '100%'}} transition={{ duration: 0.2 }}>
+            <motion.span initial={{y: '-100%'}} animate = {{y:0 ,transition:{duration:0.5}}} exit={{y: '100%', transition:{duration:0.25}}}>
                 {title}
             </motion.span>
         </h1>
@@ -43,7 +43,7 @@ const variants = {
         transition:{
             delay:   0.05* i,
             ease: 'easeIn',
-            duration: 0.25
+            duration: 0.5
         }
     }),
     exit: i => ({

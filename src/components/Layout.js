@@ -54,23 +54,23 @@ export default function Layout({headerText,error ,extraStyles, children}) {
 
 
 const variants = {
-  animate: {
+  animate: i =>({
     opacity: 1,
     top: 0 ,
     transition:{
-      ease:[0.18, 0.89, 0.32, 1.4],
+      ease:[0.18, 0.89, 0.1, 1],
+      duration: 1,
+      delay: 0.01 * i,
+
     }
-  },
+  }),
   initial: i => ({
     opacity: 0,
-    top: 40 + Math.pow(1.45,i),
-    transition: {
-      delay: Math.pow(1.7, i),
-      duration: 8
-   }
+    top: 40 + Math.pow(1.3,i),
+
   }),
   exit: i => ({
     opacity: 0,
-    top:   0.25* Math.pow(1.4,i),
+    top:   0.3* Math.pow(1.3,i),
   })
 }

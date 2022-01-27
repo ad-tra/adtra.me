@@ -24,8 +24,8 @@
             height: 2px;
             animation-name: slideIn;
             animation-timing-function: ease-in;
-            animation-duration: 0.5s;
-
+            animation-duration: 1s;
+            animation-delay: 0.3s;
             animation-fill-mode: both
         }
         &::after{
