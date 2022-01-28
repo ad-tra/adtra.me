@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 import "../styles/global.scss"
 import * as Scss from '../styles/breakpoints.module.scss'
-
+import Canvas from './Canvas'
 
 export default function Layout({headerText,error ,extraStyles, children}) {
     //changes the word "development" in header to "dev" on mobile screens
@@ -32,7 +32,6 @@ export default function Layout({headerText,error ,extraStyles, children}) {
             </h1> 
           : 
           ""}
-
           {children}
 
           <nav className="layout_controls">
@@ -42,9 +41,9 @@ export default function Layout({headerText,error ,extraStyles, children}) {
               <li><Link to="/501">fr</Link></li>
             </ul>*/}
             <ul className="internal_links">
-              <li><Link to="/">home</Link></li>
               <li><Link to="/work">work</Link></li>
               <li><Link to="/blog">blog</Link></li>
+              <li><Link to="/">home</Link></li>
             </ul>
           </nav>
       </div> 
