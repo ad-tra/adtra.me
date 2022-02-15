@@ -70,7 +70,7 @@
             &_item{
                 position: relative;
                 margin-bottom: 2.5em;
-                transition: opacity 0.3s ease;
+                transition: filter 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
                 @media (max-width: $breakpointMobile){
                     margin-bottom:2.5em;   
                 }

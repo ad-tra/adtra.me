@@ -8,7 +8,7 @@ import getOpacityMesh from '../utils/opacityMesh';
 export default function Section({title, list}) {
     
     const [isMobile, setIsMobile] = useState(undefined);
-    const [opacityMesh, setOpacityMesh] = useState(list.map(el => 0));
+    const [opacityMesh, setOpacityMesh] = useState(list.map(el => ({opacity:0, filter: 0}) ));
     const handleHover = i => (list.length > 1 && !isMobile) && setOpacityMesh(getOpacityMesh(list, i, 0.2))
     useEffect(() => {
         const matchesResponsiveQuery = window.matchMedia(`(max-width: ${Scss.breakpointMobile})`).matches
@@ -18,8 +18,7 @@ export default function Section({title, list}) {
     }, []);
 
 
-
-    console.log(list.map(el => 1))
+    console.log(opacityMesh)
     return (
     <section>
         <h1 className="title">
@@ -31,7 +30,15 @@ export default function Section({title, list}) {
             {list.map(({ title, slug}, i ) =>{ 
                 const isLocal = !slug.includes("://")
                 return ( 
-                <motion.li className="blog_posts_list_item" style={{opacity: opacityMesh[i]}} onMouseOver={()=>handleHover(i)} variants = {variants} initial = "initial" animate = "animate" exit ="exit" custom ={i}>
+                <motion.li 
+                    className="blog_posts_list_item" 
+                    style={{filter: `opacity(${opacityMesh[i].opacity}) blur(${opacityMesh[i].filter}px)`}} 
+                    onMouseOver={()=>handleHover(i)} 
+                    variants = {variants} 
+                    initial = "initial" 
+                    animate = "animate" 
+                    exit ="exit" 
+                    custom ={i}>
                         <Link to = {isLocal ? "./" + slug : slug} target={isLocal? "_self" : "_blank"} style={{textDecoration:  opacityMesh[i] < 0.3 && "none"}} >{title}</Link>
 
                 </motion.li>
@@ -45,12 +52,10 @@ const variants = {
     initial: i => ({
         y: 30 / (i === 0 ? 1 : i) ,
         scaleY: 1* Math.pow(0.9,i ) ,
-        filter: "opacity(0)"
     }),
     animate: i => ({
         y: 0,
         scaleY: 1,
-        filter: "opacity(1)",
         transition:{
             delay:   0.05* i,
             ease: 'easeIn',
