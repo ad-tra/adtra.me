@@ -8,12 +8,12 @@ import getOpacityMesh from '../utils/opacityMesh';
 export default function Section({title, list}) {
     
     const [isMobile, setIsMobile] = useState(undefined);
-    const [opacityMesh, setOpacityMesh] = useState(list.map(el => ({opacity:0, filter: 0}) ));
+    const [opacityMesh, setOpacityMesh] = useState(list.map(el => ({opacity:1, filter: 0}) ));
     const handleHover = i => (list.length > 1 && !isMobile) && setOpacityMesh(getOpacityMesh(list, i, 0.2))
     useEffect(() => {
         const matchesResponsiveQuery = window.matchMedia(`(max-width: ${Scss.breakpointMobile})`).matches
         setIsMobile(matchesResponsiveQuery)
-        setOpacityMesh( matchesResponsiveQuery ?  list.map(el => 1):  getOpacityMesh(list,0, 0.2))
+        setOpacityMesh( matchesResponsiveQuery ?  list.map(el => ({opacity:1, filter: 0}) ):  getOpacityMesh(list,0, 0.2))
 
     }, []);
 
