@@ -20,7 +20,7 @@ export default function Work() {
                 <SEO title="Work - Adam Trabelsi" description={"my work along with personal projects that I did for fun"}/>
 
                 <div className="long_content" >
-                    <Section title=" personal projects" list={projectsMap} /> 
+                    <Section title="work & Personal Projects" list={projectsMap} /> 
 
 
                 </div>

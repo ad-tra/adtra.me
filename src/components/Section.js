@@ -8,7 +8,7 @@ import getOpacityMesh from '../utils/opacityMesh';
 export default function Section({title, list}) {
     
     const [isMobile, setIsMobile] = useState(undefined);
-    const [opacityMesh, setOpacityMesh] = useState(list.map(el => ({opacity:1, filter: 0}) ));
+    const [opacityMesh, setOpacityMesh] = useState(list.map(el => ({opacity:1, filter: 1}) ));
     const handleHover = i => (list.length > 1 && !isMobile) && setOpacityMesh(getOpacityMesh(list, i, 0.2))
     useEffect(() => {
         const matchesResponsiveQuery = window.matchMedia(`(max-width: ${Scss.breakpointMobile})`).matches
@@ -52,15 +52,17 @@ const variants = {
     initial: i => ({
         y: 30 / (i === 0 ? 1 : i) ,
         scaleY: 1* Math.pow(0.9,i ) ,
+        opacity: 0,
     }),
     animate: i => ({
         y: 0,
         scaleY: 1,
         transition:{
-            delay:   0.05* i,
+            delay:   0.1* i,
             ease: 'easeIn',
-            duration: 0.4
-        }
+            duration: 0.2
+        },
+        opacity: 1,
     }),
     exit: i => ({
         y: 50 + Math.pow(0.9, i),

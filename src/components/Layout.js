@@ -9,20 +9,7 @@ import Canvas from './Canvas'
 
 export default function Layout({headerText,error ,extraStyles, children}) {
     //changes the word "development" in header to "dev" on mobile screens
-    useEffect(() => {
 
-       if(!!headerText) {
-        const mediaQuery = window.matchMedia(`(max-width: ${Scss.breakpointMobile})`)
-        changeHeaderContent(mediaQuery) // in case the user is mobile by default. he won't change his window, so this will take care of him/her.
-        
-        mediaQuery.addEventListener('change', changeHeaderContent);
-        
-        function changeHeaderContent(width){
-          if(width.matches)
-            document.querySelector('.layout_header').textContent = document.querySelector('.layout_header').textContent.replace("development", "dev")
-        }
-      }    
-    })
     
   return (
       <div className={`${error? "error" : ''} layout`} style={extraStyles}>
