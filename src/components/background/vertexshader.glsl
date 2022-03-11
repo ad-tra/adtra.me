@@ -41,8 +41,8 @@
 
         void main() {
             vUv = uv;
-            vDistortion = snoise(vUv.xx * 4. - u_randomisePosition * 0.01);
-            xDistortion = snoise(vUv.yy * 1. - u_randomisePosition * 0.01);
+            vDistortion = snoise(vUv.xx * 1. - u_randomisePosition * 0.001);
+            xDistortion = snoise(vUv.yy * 9. - u_randomisePosition * 0.001);
             vec3 pos = position;
             pos.z += (vDistortion * 20.);
             pos.x += (xDistortion * 25.);
