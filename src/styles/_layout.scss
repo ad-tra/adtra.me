@@ -1,8 +1,8 @@
 .layout{
     font-family: "Oregon Light Regular", Helvetica, sans-serif;
     position: relative;
-    background-image: url('../../data/images/main-background.png');
-    background-color: #d4d4d4; /*display this color while the image loads*/
+    //background-image: url('../../data/images/main-background.png');
+   // background-color: #d4d4d4; /*display this color while the image loads*/
     width: 100vw;
     min-height: 100vh;
     background-size: cover;
@@ -11,6 +11,11 @@
     transition: filter 0.3s ease;
     @media (max-width: $breakpointLaptop){
         font-size: 12px;
+    }
+    .three-container{
+        pointer-events: none;
+        position: fixed;
+        filter: grayscale(1);  
     }
     &_header{
         position: absolute;
@@ -136,4 +141,10 @@
             }
         }
     }
+}
+canvas{
+    position: fixed;
+    height: 100% !important;
+    width: 100% !important;
+    filter: grayscale(1);
 }
