@@ -78,7 +78,6 @@
                     text-decoration: underline 1px $gray;
                     color:$gray;
                     font-size: 2.5em;
-                    display: block;
                     @media (max-width: $breakpointMobile){
                         font-size:2em;
                     }

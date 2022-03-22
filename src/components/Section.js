@@ -13,7 +13,7 @@ export default function Section({title, list}) {
     useEffect(() => {
         const matchesResponsiveQuery = window.matchMedia(`(max-width: ${Scss.breakpointMobile})`).matches
         setIsMobile(matchesResponsiveQuery)
-        setOpacityMesh( matchesResponsiveQuery ?  list.map(el => ({opacity:1, filter: 0}) ):  getOpacityMesh(list,0, 0.2))
+        setOpacityMesh( oldOpacityMesh => matchesResponsiveQuery ?  list.map(el => ({opacity:1, filter: 0}) ):  getOpacityMesh(list, 0, 0.2))
 
     }, []);
 
@@ -22,7 +22,7 @@ export default function Section({title, list}) {
     return (
     <section>
         <h1 className="title">
-            <motion.span initial={{y: '-100%'}} animate = {{y:0 ,transition:{duration:0.5}}} exit={{y: '100%', transition:{duration:0.25}}}>
+            <motion.span initial={{y: '-100%'}} animate = {{y:0 ,transition:{ duration:0.35}}} exit={{y: '100%', transition:{ duration:0.45}}}>
                 {title}
             </motion.span>
         </h1>
@@ -33,13 +33,12 @@ export default function Section({title, list}) {
                 <motion.li 
                     className="blog_posts_list_item" 
                     style={{filter: `opacity(${opacityMesh[i].opacity}) blur(${opacityMesh[i].filter}px)`}} 
-                    onMouseOver={()=>handleHover(i)} 
                     variants = {variants} 
                     initial = "initial" 
                     animate = "animate" 
                     exit ="exit" 
                     custom ={i}>
-                        <Link to = {isLocal ? "./" + slug : slug} target={isLocal? "_self" : "_blank"} style={{textDecoration:  opacityMesh[i] < 0.3 && "none"}} >{title}</Link>
+                        <Link to = {isLocal ? "./" + slug : slug} onMouseOver={()=>handleHover(i)} target={isLocal? "_self" : "_blank"} style={{textDecoration:  opacityMesh[i] < 0.3 && "none"}} >{title}</Link>
 
                 </motion.li>
              )})}
@@ -66,11 +65,12 @@ const variants = {
     }),
     exit: i => ({
         y: 50 + Math.pow(0.9, i),
-        opacity: [0,0],
+        opacity: [1,0.5,0],
+        scaleY: 1* Math.pow(0.2,i ) ,
         transition:{
             ease: 'easeIn',
-            delay:   0.1 + 0.01* i,
-            duration: 0.2,
+            delay:    0.02* i,
+            duration: 0.38,
         }
     })
 }
