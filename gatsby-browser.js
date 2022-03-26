@@ -1,6 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {AnimatePresence} from 'framer-motion';
 
-export const wrapPageElement = ({element}) => (
-  <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
-);
+import Background from './src/components/background/Background'
+
+
+
+export const wrapPageElement = ({element}) => { 
+  return (
+  <AnimatePresence exitBeforeEnter>
+    {element}
+    <Background />
+  </AnimatePresence>
+)};

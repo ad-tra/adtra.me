@@ -66,6 +66,7 @@
             list-style: none;
             @media (max-width: $breakpointMobile){
                 padding-right:$mobileScreenMargin;
+                padding-bottom: 2em; /*gives room for navbar*/
             }
             &_item{
                 position: relative;

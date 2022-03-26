@@ -65,12 +65,12 @@
             float noise2 = snoise(vUv * 2. + u_time * 0.001);
 
             vec3 color = bg;
-            color = mix(color, c1, noise1 * 0.6);
-            color = mix(color, c2, noise2 * .4);
+            color = mix(color, c1, noise1 * 0.9);
+            color = mix(color, c2, noise2 * 0.9);
 
             color = mix(color, mix(c1, c2, vUv.x), vDistortion);
 
-            float border = smoothstep(0.1, 0.6, vUv.x);
+            float border = smoothstep(0.5, 0.6, vUv.x);
 
             color = mix(color, bgMain, 1. -border);
 

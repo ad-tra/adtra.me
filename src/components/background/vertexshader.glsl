@@ -44,7 +44,7 @@
             vDistortion = snoise(vUv.xx * 1. - u_randomisePosition * 0.001);
             xDistortion = snoise(vUv.yy * 9. - u_randomisePosition * 0.001);
             vec3 pos = position;
-            pos.z += (vDistortion * 20.);
+            pos.z += (vDistortion * 30.);
             pos.x += (xDistortion * 25.);
 
             gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
