@@ -8,12 +8,9 @@ import * as Scss from '../styles/breakpoints.module.scss'
 import Background from './background/Background'
 
 export default function Layout({headerText,error ,extraStyles, children}) {
-    //changes the word "development" in header to "dev" on mobile screens
-
     
   return (
       <div className={`${error? "error" : ''} layout`} style={extraStyles}>
-          <Background />
           {headerText ? 
             <h1 className="layout_header" >
               {headerText.split(" ").map((word,i) => <motion.span variants = {variants} initial = "initial" animate= "animate" exit = "exit" custom = {i}> {word}</motion.span>)}

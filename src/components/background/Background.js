@@ -4,7 +4,6 @@ import * as THREE from "three"
 
 import fragmentshader from 'raw-loader!glslify-loader!./fragmentshader.glsl';
 import vertexshader from 'raw-loader!glslify-loader!./vertexshader.glsl';
-import snoise from 'raw-loader!glslify-loader!./snoise.glsl'
 
 export default function Canvas(props) {
 
@@ -18,8 +17,10 @@ export default function Canvas(props) {
     }
 
     useEffect(() => {
+        if(document.querySelector('canvas.background') !== null) return;
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
+        renderer.domElement.className = "background"
         document.body.prepend( renderer.domElement )
         
         const scene = new THREE.Scene();
@@ -71,8 +72,10 @@ export default function Canvas(props) {
         let x = randomInteger(0, 32);
         let y = randomInteger(0, 32);
         const animate = function () {
-            requestAnimationFrame( animate );
-            renderer.render( scene, camera );
+            
+            setTimeout( () =>requestAnimationFrame( animate ), 1000 / 100 );
+            renderer.render(scene, camera);
+            
             mesh.material.uniforms.u_randomisePosition.value = new THREE.Vector2(j, j);
             
             mesh.material.uniforms.u_color1.value = new THREE.Vector3(R(x,y,t/2), G(x,y,t/2), B(x,y,t/2));
