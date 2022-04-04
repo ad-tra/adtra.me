@@ -6,7 +6,7 @@ description: ""
 status: "draft"	
 ---	
 # Introducing SoFlo Explanations Hub; the Largest Free Collection of SAT Video Answer Explanations 
-you took a practice SAT, and you finished self-grading it. You check out the answer key on the back to understand your mistakes, only to be put down by cryptic paragraphs. The explanations for the answers don't t make sense. You instead consult google, trying to find scattered explanations from different websites. That's too much work. Here at SoFlo Tutors, we consolidate the scatteredness by building a hub of question explanations. Each SAT question has a thorough video that explains the answer and the thought process behind the answer. Currently, we have close to 3,000 video explanations for you to rely on.
+You took a practice SAT, and you finished self-grading it. You check out the answer key on the back to understand your mistakes, only to be put down by cryptic paragraphs. The explanations for the answers don't t make sense. You instead consult google, trying to find scattered explanations from different websites. That's too much work. Here at SoFlo Tutors, we consolidate the scatteredness by building a hub of question explanations. Each SAT question has a thorough video that explains the answer and the thought process behind the answer. Currently, we have close to 3,000 video explanations for you to rely on.
 
 Three thousand questions to cover, That's a huge number. Building such  a vast platform was a technical road paved with problems, challenges, and corresponding solutions. If you're curious about the platform's building process, hop along for a quick technical overview. We'll talk about choosing the appropriate tech stack, sourcing the data, structuring it, and building an engaging user interface. 
 
