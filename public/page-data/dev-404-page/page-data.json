@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---cache-dev-404-page-js",
     "path": "/dev-404-page/",
-    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/blog/reverse-engineering-a-collegeBoard-app-ft-electron/"},{"path":"/404.html"},{"path":"/404/"},{"path":"/501/"},{"path":"/about/"},{"path":"/blog/"},{"path":"/contact/"},{"path":"/"},{"path":"/nour/"},{"path":"/work/"}]}},"pageContext":{}},
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/blog/reverse-engineering-a-collegeBoard-app-ft-electron/"},{"path":"/blog/soflo-explanations-hub/"},{"path":"/404.html"},{"path":"/404/"},{"path":"/501/"},{"path":"/about/"},{"path":"/blog/"},{"path":"/contact/"},{"path":"/"},{"path":"/nour/"},{"path":"/work/"}]}},"pageContext":{}},
     "staticQueryHashes": []}
