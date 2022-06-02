@@ -5,13 +5,9 @@ title: "Building the largest free SAT explanations hub"
 description: ""
 status: "public"	
 ---	
-<<<<<<< HEAD
 # Building the largest free SAT explanations hub 
+
 *this article is originally published at [soflotutors.com](https://soflotutors.com/blog/introducing-soflo-explanations-hub-the-largest-free-collection-of-sat-video-answer-explanations/). Written by me, and edited by a SoFlo Tutors editor. enjoy the read : )*
-=======
-# Introducing SoFlo Explanations Hub; the Largest Free Collection of SAT Video Answer Explanations 
-You took a practice SAT, and you finished self-grading it. You check out the answer key on the back to understand your mistakes, only to be put down by cryptic paragraphs. The explanations for the answers don't t make sense. You instead consult google, trying to find scattered explanations from different websites. That's too much work. Here at SoFlo Tutors, we consolidate the scatteredness by building a hub of question explanations. Each SAT question has a thorough video that explains the answer and the thought process behind the answer. Currently, we have close to 3,000 video explanations for you to rely on.
->>>>>>> 1630f31c07d158bd3a877bbb6066d87f73acb48a
 
 You took a practice SAT, and you finished self-grading it. You check out the answer key on the back of the test to understand your mistakes, only to be put down by confusing and cryptic paragraphs. The explanations for the answers don’t make sense. You then consult Google, trying to find scattered explanations from different websites. That’s too much work.
 
