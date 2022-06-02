@@ -6,7 +6,7 @@ import Section from "../components/Section";
 
 export default function Work() {
     const projectsMap = [
-        {slug: "https://soflotutors.netlify.app/2018-may-sat/reading/may-2018-section1-q3", title: "SoFlo Tutors - Dynamic Gatsby Blog (WIP)"}, 
+        {slug: "https://soflotutors.com/explanations", title: "SoFlo Tutors - Building The Largest Free SAT Explanations Hub "}, 
         { slug: "https://soflotutors.com/reg/consult",  title: "Registration Form with Async Data Validation" },
         { slug: "https://kashidajs.netlify.app/", title: "Kashida - Readability Enhancement Algorithm for the Arabic Script" },
         { slug: "https://github.com/ad-tra/toth",  title: "Toth -  Educational Website for SAT students" },

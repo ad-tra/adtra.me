@@ -50,12 +50,10 @@ export default function Section({title, list}) {
 const variants = {
     initial: i => ({
         y: 30 / (i === 0 ? 1 : i) ,
-        scaleY: 1* Math.pow(0.9,i ) ,
         opacity: 0,
     }),
     animate: i => ({
         y: 0,
-        scaleY: 1,
         transition:{
             delay:   0.1* i,
             ease: 'easeIn',
@@ -66,7 +64,6 @@ const variants = {
     exit: i => ({
         y: 50 + Math.pow(0.9, i),
         opacity: [1,0.5,0],
-        scaleY: 1* Math.pow(0.2,i ) ,
         transition:{
             ease: 'easeIn',
             delay:    0.02* i,

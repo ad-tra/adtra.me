@@ -46,7 +46,7 @@
             }
         }
         .title{
-            font-family: "Tex Bold", Helvetica, sans-serif;
+            font-family: "Oregon Light Regular", Helvetica, sans-serif;
             margin-top: 0.5em;
             margin-bottom: 2em;
             text-transform: capitalize;
@@ -62,7 +62,7 @@
             }
         }
         .blog_posts_list{
-            font-family: "Oregon Regular", Helvetica, sans-serif;
+            font-family: "Oregon Light Regular", Helvetica, sans-serif;
             list-style: none;
             @media (max-width: $breakpointMobile){
                 padding-right:$mobileScreenMargin;
@@ -76,7 +76,7 @@
                     margin-bottom:2.5em;   
                 }
                 a{
-                    text-decoration: underline 1px $gray;
+                    text-decoration: underline 0.2px $gray;
                     color:$gray;
                     font-size: 2.5em;
                     @media (max-width: $breakpointMobile){
