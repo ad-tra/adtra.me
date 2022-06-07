@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-index-js",
     "path": "/",
-    "result": {"pageContext":{}},
+    "result": {"data":{"locales":{"edges":[{"node":{"ns":"translation","data":"{\"Hello. I'm Adam Trabelsi, a student & an aspiring software engineer with focus on web development.\":\"Hello. I'm Adam Trabelsi, a student & an aspiring software engineer with focus on web development.\",\"Adam Trabelsi - hi there : )\":\"Adam Trabelsi - hi there : )\"}","language":"en"}}]}},"pageContext":{"language":"en","i18n":{"language":"en","languages":["en","ar","fr"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":false,"originalPath":"/","path":"/"}}},
     "staticQueryHashes": ["942907122"]}

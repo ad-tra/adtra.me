@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-work-js",
     "path": "/work/",
-    "result": {"pageContext":{}},
+    "result": {"pageContext":{"language":"en","i18n":{"language":"en","languages":["en","ar","fr"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":false,"originalPath":"/work/","path":"/work/"}}},
     "staticQueryHashes": ["942907122"]}

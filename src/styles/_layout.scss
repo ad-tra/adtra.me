@@ -12,6 +12,15 @@
     @media (max-width: $breakpointLaptop){
         font-size: 12px;
     }
+    &.ar{
+        font-family: "Harir Display", Helvetica, sans-serif;
+        .layout_header{
+            text-align: right;
+            direction: rtl;
+            font-size: 5.5em;
+            color: #373737;
+        }
+    }
     .three-container{
         pointer-events: none;
         position: fixed;
