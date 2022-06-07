@@ -19,6 +19,9 @@
             direction: rtl;
             font-size: 5.5em;
             color: #373737;
+            @media (max-width: $breakpointMobile){
+                font-size: 4.4em;
+            }
         }
     }
     .three-container{
