@@ -16160,24 +16160,24 @@ module.exports = {
 /***/ }),
 
 /***/ "react-dom/server":
-/*!*****************************************************************************************************************************!*\
-  !*** external "C:\\Users\\19083\\Documents\\programation_projects\\personal\\adtra.me\\node_modules\\react-dom\\server.js" ***!
-  \*****************************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** external "/home/adam/Documents/programation_projects/personal/adtra.me/node_modules/react-dom/server.js" ***!
+  \****************************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("C:\\Users\\19083\\Documents\\programation_projects\\personal\\adtra.me\\node_modules\\react-dom\\server.js");
+module.exports = require("/home/adam/Documents/programation_projects/personal/adtra.me/node_modules/react-dom/server.js");
 
 /***/ }),
 
 /***/ "react":
-/*!************************************************************************************************************************!*\
-  !*** external "C:\\Users\\19083\\Documents\\programation_projects\\personal\\adtra.me\\node_modules\\react\\index.js" ***!
-  \************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** external "/home/adam/Documents/programation_projects/personal/adtra.me/node_modules/react/index.js" ***!
+  \***********************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("C:\\Users\\19083\\Documents\\programation_projects\\personal\\adtra.me\\node_modules\\react\\index.js");
+module.exports = require("/home/adam/Documents/programation_projects/personal/adtra.me/node_modules/react/index.js");
 
 /***/ }),
 
