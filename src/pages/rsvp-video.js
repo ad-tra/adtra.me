@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Layout from '../components/Layout'
 
 
 const RsvpVideo = () =>
@@ -10,9 +11,7 @@ const RsvpVideo = () =>
     }, []);
 
     return (
-        <div>
-
-        </div>
+        <Layout />
     );
 }
 
