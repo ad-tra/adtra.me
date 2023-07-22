@@ -18,7 +18,6 @@ export default function Section({title, list}) {
     }, []);
 
 
-    console.log(opacityMesh)
     return (
     <section>
         <h1 className="title">

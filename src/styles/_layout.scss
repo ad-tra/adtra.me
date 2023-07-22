@@ -1,162 +1,164 @@
-.layout{
-    font-family: "Oregon Light Regular", Helvetica, sans-serif;
-    position: relative;
-    //background-image: url('../../data/images/main-background.png');
-   // background-color: #d4d4d4; /*display this color while the image loads*/
-    width: 100vw;
-    min-height: 100vh;
-    background-size: cover;
-    z-index: 2;
-    overflow: auto;
-    transition: filter 0.3s ease;
-    @media (max-width: $breakpointLaptop){
-        font-size: 12px;
+.layout {
+	font-family: "Oregon Light Regular", Helvetica, sans-serif;
+	position: relative;
+	//background-image: url('../../data/images/main-background.png');
+	// background-color: #d4d4d4; /*display this color while the image loads*/
+	width: 100vw;
+	min-height: 100vh;
+	background-size: cover;
+	z-index: 2;
+	overflow: auto;
+	transition: filter 0.3s ease;
+	@media (max-width: $breakpointLaptop) {
+		font-size: 12px;
+	}
+    .lb_link{
+        color: $blue--faint;
+        text-decoration-thickness: 1px;
     }
-    &.ar{
-        font-family: "Harir Display", Helvetica, sans-serif;
-        .layout_header{
-            text-align: right;
-            direction: rtl;
-            font-size: 5.5em;
-            color: #373737;
-            @media (max-width: $breakpointMobile){
-                font-size: 4.4em;
-            }
-        }
-    }
-    .three-container{
-        pointer-events: none;
-        position: fixed;
-        filter: grayscale(1);  
-    }
-    &_header{
-        position: absolute;
-        color: $gray;
-        font-size: 7em;
-        z-index:2;
-        @media (max-width: $breakpointLaptop){
-            font-size: 5.3em;
-        }
-        @media (max-width: $breakpointMobile){
-            font-size: 7vh;
-            padding-top:4vh;
-            line-height: 1.3em;
-        }
-        font-weight: normal;
-        line-height: 1.15em;
-        /*same margin as the a href inside nav controls*/
-        margin: 0.45em 0.3em;
-        span{
-            position: relative;
-            &::before{
-                content: "";
-                width: 100%;
-                height: 1em;
-                left: 0;
-                display: block;
-                position: absolute;
-                transform: translateY(-10px);
-            }
-        }
-    }
-    &_controls{
-        position: fixed;
-        bottom: 0; 
-        width: 100vw;
-        display: flex;
-        justify-content: flex-end;
-        z-index: 2;
-        @media (max-width: $breakpointMobile){
-            justify-content: flex-start;
-            backdrop-filter: blur(3px);
-        }
-        font-family: "Tex Regular", Helvetica, sans-serif;
-        z-index: 1;
+	&.ar {
+		font-family: "Harir Display", Helvetica, sans-serif;
+		.layout_header {
+			text-align: right;
+			direction: rtl;
+			font-size: 5.5em;
+			color: #373737;
+			@media (max-width: $breakpointMobile) {
+				font-size: 4.4em;
+			}
+		}
+	}
+	.three-container {
+		pointer-events: none;
+		position: fixed;
+		filter: grayscale(1);
+	}
+	&_header {
+		position: absolute;
+		color: $gray;
+		font-size: 7em;
+		z-index: 2;
+		@media (max-width: $breakpointLaptop) {
+			font-size: 5.3em;
+		}
+		@media (max-width: $breakpointMobile) {
+			font-size: 7vh;
+			padding-top: 4vh;
+			line-height: 1.3em;
+		}
+		font-weight: normal;
+		line-height: 1.15em;
+		/*same margin as the a href inside nav controls*/
+		margin: 0.45em 0.3em;
+		span {
+			position: relative;
+			&::before {
+				content: "";
+				width: 100%;
+				height: 1em;
+				left: 0;
+				display: block;
+				position: absolute;
+				transform: translateY(-10px);
+			}
+		}
+	}
+	&_controls {
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
+		display: flex;
+		justify-content: flex-end;
+		z-index: 2;
+		@media (max-width: $breakpointMobile) {
+			justify-content: flex-start;
+			backdrop-filter: blur(3px);
+		}
+		font-family: "Tex Regular", Helvetica, sans-serif;
+		z-index: 1;
 
-        .languages, .internal_links{
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
-            font-weight: normal;
-            li{
-                font-size: 1.3em;
-                text-transform: uppercase;
-                display: block;
-                padding: 1em 1.5em;
-                position: relative;
-                a{
-                    color:inherit;
-                    text-decoration: none;
-                    color: $gray;
-                    font-size:1em;
-                    &[aria-current="page"]{
-                        text-decoration: underline 1px $gray;
-                    }
-                }
-
-            }
-            li:not(li:last-of-type)::before{
-                $height: 21px;
-                content: "";
-                height: $height;
-                width: 2px;
-                background: $gray--light;
-                position: absolute;
-                right: 0;
-                bottom: calc(50% - #{$height} /2);
-            }
-        }
-        .languages{
-            display: none;
-            li:not(li:last-of-type)::before{
-                transform: rotate(45deg);
-            }
-        }
-    
-    }
-
+		.languages,
+		.internal_links {
+			display: flex;
+			justify-content: space-around;
+			list-style: none;
+			font-weight: normal;
+			li {
+				font-size: 1.3em;
+				text-transform: uppercase;
+				display: block;
+				padding: 1em 1.5em;
+				position: relative;
+				a {
+					color: inherit;
+					text-decoration: none;
+					color: $gray;
+					font-size: 1em;
+					&[aria-current="page"] {
+						text-decoration: underline 1px $gray;
+					}
+				}
+			}
+			li:not(li:last-of-type)::before {
+				$height: 21px;
+				content: "";
+				height: $height;
+				width: 2px;
+				background: $gray--light;
+				position: absolute;
+				right: 0;
+				bottom: calc(50% - #{$height} / 2);
+			}
+		}
+		.languages {
+			display: none;
+			li:not(li:last-of-type)::before {
+				transform: rotate(45deg);
+			}
+		}
+	}
 }
 
-.main-background{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-
+.main-background {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
 }
-.error + .main-background { 
-    mix-blend-mode: luminosity;
-    filter: brightness(0.3);
+.error + .main-background {
+	mix-blend-mode: luminosity;
+	filter: brightness(0.3);
 }
-.error{
-    background:$blue;
-    /*unlike the upper .layout, error needs to fill the whole screen with background color hence the full height.*/
-    height: 100vh;
-    .layout{
-        &_header{
-            color:$blue--light;
-        }
-        &_controls{
-            .languages, .internal_links{
-                li{
-                    a{
-                        color:$blue--light;
-                        &[aria-current="page"]{
-                            text-decoration: underline 1px $blue--light;
-                        }
-                    }
-                    &:before{
-                        background: $blue--faint !important;
-                    }
-                }
-            }
-        }
-    }
+.error {
+	background: $blue;
+	/*unlike the upper .layout, error needs to fill the whole screen with background color hence the full height.*/
+	height: 100vh;
+	.layout {
+		&_header {
+			color: $blue--light;
+		}
+		&_controls {
+			.languages,
+			.internal_links {
+				li {
+					a {
+						color: $blue--light;
+						&[aria-current="page"] {
+							text-decoration: underline 1px $blue--light;
+						}
+					}
+					&:before {
+						background: $blue--faint !important;
+					}
+				}
+			}
+		}
+	}
 }
-canvas{
-    position: fixed;
-    height: 100% !important;
-    width: 100% !important;
-    filter: grayscale(1);
+canvas {
+	position: fixed;
+	height: 100% !important;
+	width: 100% !important;
+	filter: grayscale(1);
 }
