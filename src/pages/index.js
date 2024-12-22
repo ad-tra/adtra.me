@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 export default function IndexPage({ data }) {
 	const { t } = useTranslation();
 	const header_text_l =
-		"Adam Trabelsi, software engineer building secure note-taking solutions at";
+		"Hey I'm Adam Trabelsi, a software engineer building secure note-taking solutions at";
 	const header_text_r = ", using Rust";
 	return (
 		<Layout className={data.locales.edges[0].node.language}>
